@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-    var imagePicker: UIImagePickerController!
+    var imagePicker: UIImagePickerController?
+    var flashMode = AVCaptureDevice.FlashMode.off
+    
+    private var toggleFlashButton: UIButton = {
+        var button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "flashOff"), for: .normal)
+        
+        button.addTarget(self, action: #selector(toggleCameraFlash), for: .touchUpInside)
+        button.layer.zPosition = 1
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     private var backgroundView: UIImageView = {
         var someimageView = UIImageView()
@@ -32,7 +44,7 @@ class ViewController: UIViewController {
         return someImageView
     }()
     
-    private var choseOrTakeImageButton: UIButton = {
+    private var TakeImageButton: UIButton = {
         var button = UIButton(type: .custom)
         button.setImage(UIImage(named: "camera"), for: .normal)
         button.layer.zPosition = 2
@@ -66,6 +78,17 @@ class ViewController: UIViewController {
     }
 
     
+    //MARK: Toggle Flash
+    @objc func toggleCameraFlash() {
+        if flashMode == .on {
+            flashMode = .off
+            toggleFlashButton.setImage(UIImage(named: "flashOff"), for: .normal)
+        } else {
+            flashMode = .on
+            toggleFlashButton.setImage(UIImage(named: "flashOn"), for: .normal)
+        }
+    }
+    
     //MARK: - Add image to Library
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
@@ -84,13 +107,16 @@ class ViewController: UIViewController {
         return
     }
     selectImageFrom(.camera)
-    choseOrTakeImageButton.setTitle("Take a Image", for: .normal)
+    TakeImageButton.setTitle("Take a Image", for: .normal)
     
     }
     
     
     func selectImageFrom(_ source: ImageSource) {
         imagePicker = UIImagePickerController()
+       
+        guard let imagePicker = imagePicker else { return }
+        
         imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
         switch  source {
@@ -109,7 +135,6 @@ class ViewController: UIViewController {
    @objc fileprivate func save(_ sender: AnyObject) {
         guard let selectedImage = imageViewTake.image else {
             showAlertWith(title: "Error", message: "You Need To First Taka a Photo or Chose One From Libary")
-            print("Image not found!")
             return
         }
     
@@ -127,16 +152,16 @@ class ViewController: UIViewController {
 
     fileprivate func addSubView() {
 
-        [choseOrTakeImageButton, backgroundView, imageViewTake, saveImageButton].forEach{view.addSubview(($0))}
+        [TakeImageButton, backgroundView, imageViewTake, saveImageButton, toggleFlashButton].forEach{view.addSubview(($0))}
     }
     
     //MARK: - Constraints
     fileprivate func setupConstraints() {
         
         //ChoseOrTakeImageButton Constraint
-        choseOrTakeImageButton.anchor(top: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: nil, trailing: nil, padding: .init(top: 0, left: 0, bottom: 16, right: 0), size: .init(width: 50, height: 50))
+        TakeImageButton.anchor(top: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: nil, trailing: nil, padding: .init(top: 0, left: 0, bottom: 16, right: 0), size: .init(width: 50, height: 50))
         
-        choseOrTakeImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        TakeImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         //BackgrounView Constraint
         backgroundView.anchor(top: view.topAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
@@ -151,6 +176,9 @@ class ViewController: UIViewController {
         
         //SaveImageButton Constraint
         saveImageButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, bottom: nil, leading: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 16, left: 0, bottom: 0, right: 12), size: .init(width: 50, height: 50))
+        
+        //ToggleFlashButton Constraint
+        toggleFlashButton.anchor(top: saveImageButton.bottomAnchor, bottom: nil, leading: nil, trailing: saveImageButton.trailingAnchor, padding: .init(top: 16, left: 0, bottom: 0, right: 4), size: .init(width: 50, height: 50))
     }
 
 }
@@ -159,6 +187,8 @@ class ViewController: UIViewController {
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let imagePicker = imagePicker else { return }
         
         imagePicker.dismiss(animated: true, completion: nil)
         guard let selectedImage = info[.originalImage] as? UIImage else {
