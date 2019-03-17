@@ -15,7 +15,7 @@ ___
 
 ___
 
-* On the left screen we have an UIAlertAction saying the the image is successfully saved to the photo library. One right side is the phot library in case the camera is unavailable then the user is taken to photo library to chose a image.
+* On the left screen we have an UIAlertAction saying the the image is successfully saved to the photo library. One right side is the phot library in case the camera is unavailable then the user is taken to the photo library to chose an image.
 
 ![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Iphone2.png)
 ___
