@@ -9,7 +9,7 @@ ___
 
 ___
 
-* On the left the main screen when the app starts with the camera flash turned off. And on the right side is the app with the image loaded from the photo library and with flash button turned on.
+* On the left we have the main screen when the app starts with the camera flash turned off. And on the right side is the app with the image loaded from the photo library and with flash button turned on.
 
 ![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Mockup%20Iphone.png)
 
