@@ -164,11 +164,11 @@ class ViewController: UIViewController {
         TakeImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         //BackgrounView Constraint
-        backgroundView.anchor(top: view.topAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
+        backgroundView.anchor(top: view.topAnchor, bottom: view.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
         
         
         //ImageViewTake Constraint
-        imageViewTake.anchor(top: nil, bottom: nil, leading: view.safeAreaLayoutGuide.leadingAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 250))
+        imageViewTake.anchor(top: nil, bottom: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 250))
         
         imageViewTake.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageViewTake.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
