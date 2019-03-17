@@ -4,4 +4,5 @@ ___
 ## Example how the UI looks
 
 * The UI with the buttons(take an image/load image, save image, toggle flash) laid out.
-<img src="Images/Freebie.png" width="800" >
+
+![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Freebie.png)
