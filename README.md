@@ -13,6 +13,12 @@ ___
 
 ![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Mockup%20Iphone.png)
 
+___
+
+* On the left screen we have an UIAlertAction saying the the image is successfully saved to the photo library. One right side is the phot library in case the camera is unavailable then the user is taken to photo library to chose a image.
+
+![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Iphone2.png)
+___
 
 ## License
 ```
