@@ -3,7 +3,7 @@ Demonstrating how to use the front camera, toggle camera flash and use the back 
 ___
 ## Example how the UI looks
 
-* The UI with the buttons(take an image/load image, save image, toggle flash) laid out.
+* The UI with the image taken from the photo library and the buttons(take an image/load image, save image, toggle flash) laid out.
 
 ![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Freebie.png)
 
