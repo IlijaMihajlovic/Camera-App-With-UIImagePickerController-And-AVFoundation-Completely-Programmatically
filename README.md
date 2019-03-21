@@ -20,8 +20,12 @@ ___
 ![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Iphone2.png)
 ___
 
-* One last note. Currently, I do not have an iPhone, so I'm unable to test the app on a real device. I apologize in advance for possible bugs.
+## One Last Note
+* Currently, I do not have an iPhone, so I'm unable to test the app on a real device. I apologize in advance for possible bugs.
 
+   Kind regards,
+
+   Ilija 🖖 😄
 ___
 
 ## License
