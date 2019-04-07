@@ -1,6 +1,20 @@
 # UIImagePickerController Camera Completely Programmatically
+
+![platform-ios](https://img.shields.io/badge/platform-ios-orange.svg)
+![swift-version](https://img.shields.io/badge/swift-4.2-red.svg)
+![lisence](https://img.shields.io/badge/license-MIT-black.svg)
+
 Demonstrating how to use the front camera, toggle camera flash and use the back camera with the UIImagePickerController and AVFoundation completely Programmatically. Also saving and loading the image from the Photo Library, perhaps if the camera is unavailable.
 ___
+
+## Side Note
+* Currently, I do not have an iPhone, so I'm unable to test the app on a physical device. I apologize in advance for maybe possible bugs.
+
+   Kind regards,
+
+   Ilija 🖖 😄
+___
+
 ## Example how the UI looks
 
 * The UI with the image taken from the photo library and the buttons(take an image/load image, save image, toggle flash) laid out.
@@ -18,14 +32,6 @@ ___
 * On the left screen we have an UIAlertAction saying the the image is successfully saved to the photo library. One right side is the phot library in case the camera is unavailable then the user is taken to the photo library to chose an image.
 
 ![alt text](https://github.com/IlijaMihajlovic/UIImagePickerController-Completely-Programmatically/blob/master/UIImagePickerControllerProject%20/Images/Iphone2.png)
-___
-
-## One Last Note
-* Currently, I do not have an iPhone, so I'm unable to test the app on a real device. I apologize in advance for maybe possible bugs.
-
-   Kind regards,
-
-   Ilija 🖖 😄
 ___
 
 ## License
