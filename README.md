@@ -15,6 +15,11 @@ ___
    Ilija 🖖 😄
 ___
 
+## Getting the files
+
+Use GitHub to clone the repository locally, or download the .zip file of the repository and extract the files.
+___
+
 ## Example how the UI looks
 
 * The UI with the image taken from the photo library and the buttons(take an image/load image, save image, toggle flash) laid out.
