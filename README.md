@@ -1,4 +1,4 @@
-# UIImagePickerController Camera Completely Programmatically
+# Camera-App-With-UIImagePickerController-And-AVFoundation-Completely-Programmatically
 
 ![platform-ios](https://img.shields.io/badge/platform-ios-Blue.svg)
 ![swift-version](https://img.shields.io/badge/swift-4.2-Orange.svg)
